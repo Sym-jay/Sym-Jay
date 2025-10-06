@@ -22,7 +22,7 @@
 ## 🦋 About Me
 
 - 🎓 Currently studying Engineering in Artificial Intelligence & Machine Learning.
-- 🕹️ Minimalist at heart, inspired by the mystery and aesthetic of Hollow Knight.
+- 🕹️ Gaming enthusiast, and heavily inspired to study game development and animation.
 - 🎨 Designing in Figma, coding for the satisfaction of finishing—not for the love of it!
 - 🧠 Exploring the crossroads of ML, Deep Learning & creativity.
 
