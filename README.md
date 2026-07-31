@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100%" alt="Sym-jay | Full Stack Developer & AI/ML Enthusiast" src="https://user-images.githubusercontent.com/placeholder/banner.png" />
+  <img width="100%" alt="Sym-jay | Full Stack Developer & AI/ML Enthusiast" src=""C:\Users\Lenovo\Downloads\Snow.jpg"" />
 </p>
 
 ## 👋 Hi there!
