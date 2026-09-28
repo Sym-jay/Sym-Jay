@@ -1,96 +1,73 @@
-<p align="center">
-  <img width="100%" alt="Sym-jay banner" src="https://raw.githubusercontent.com/github/explore/main/topics/machine-learning/machine-learning.png" />
-</p>
+<div align="center">
 
-<h1 align="center">Hi, I'm Shyam (Sym-jay) 👋</h1>
-<p align="center">Full-Stack Developer & AI/ML Enthusiast — building tools that matter.</p>
+# Hi, I'm Shyam 👋
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Studying-AI%20%26%20ML%20Engineering-blue?style=flat-square" />
-  <img src="https://img.shields.io/badge/Based%20in-India-orange?style=flat-square" />
-</p>
+**Full-stack developer and AI/ML engineering student**
+building command-line tools and practical AI applications.
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-Sym--jay-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Sym-jay)
+[![X](https://img.shields.io/badge/X-%40sym__jay-000000?style=flat-square&logo=x&logoColor=white)](https://twitter.com/sym_jay)
+[![Email](https://img.shields.io/badge/Email-Contact%20me-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:contact@symjay.com)
 
-### 🧭 About Me
-
-I'm currently studying **Engineering in Artificial Intelligence & Machine Learning**, and I build across backend systems, CLI tools, and AI-powered applications. I like small, focused tools more than sprawling frameworks — things a single developer can actually understand end to end.
+</div>
 
 ---
 
-### 🛠️ Tech Stack
+## About
 
-<p align="left">
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" width="30" alt="Python" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" width="30" alt="TypeScript" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" width="30" alt="JavaScript" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/go/go.png" width="30" alt="Go" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/dart/dart.png" width="30" alt="Dart" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/java/java.png" width="30" alt="Java" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" width="30" alt="React" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" width="30" alt="Node.js" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/fastapi/fastapi.png" width="30" alt="FastAPI" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flask/flask.png" width="30" alt="Flask" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png" width="30" alt="Docker" />
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" width="30" alt="Git" />
-</p>
+I'm studying **Engineering in Artificial Intelligence & Machine Learning**, and I like building things that are useful in practice: backend systems, developer tooling and AI-powered apps. I work across several languages, and I care about tools that are easy to install and clear about what they do.
 
----
+## Featured projects
 
-### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sym-jay&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sym-jay&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" width="48%" />
-</p>
-
----
-
-### 🌟 Projects I Built
-
-| Project | Description | Language |
+| Project | What it is | Stack |
 |---|---|---|
-| [**clishe**](https://github.com/Sym-jay/clishe) | A friendly, adaptive CLI assistant that helps Linux beginners learn shell commands through natural language, with learned command mappings and next-command prediction | Bash / Python |
-| [**WildID**](https://github.com/Sym-jay/WildID) | A mobile app for identifying endangered species, with a focus on marine wildlife | Dart |
+| [**Clishe**](https://github.com/Sym-jay/clishe) | An offline-first shell assistant for Linux beginners. Type plain English, see the exact command before it runs, and optionally add AI through Ollama or Anthropic. | Python, Bash |
+| [**WildID**](https://github.com/Sym-jay/WildID) | A mobile app that helps identify endangered species, mostly marine. | Dart |
 
-### 🍴 Forks I Contribute To / Use
+## Tech
 
-These aren't my original projects — I've forked them to explore, customize, or contribute back:
+**Languages**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 
-| Project | Original Author | Description |
-|---|---|---|
-| [**neo**](https://github.com/Sym-jay/neo) | [harryfrzz](https://github.com/harryfrzz/neo) | Self-hostable framework for private RAG systems and LLM inference |
-| [**openclaw**](https://github.com/Sym-jay/openclaw) | [openclaw](https://github.com/openclaw/openclaw) | Personal AI assistant, any OS, any platform |
-| [**superfile**](https://github.com/Sym-jay/superfile) | [yorukot](https://github.com/yorukot/superfile) | Modern terminal file manager |
-| [**seerr**](https://github.com/Sym-jay/seerr) | [seerr-team](https://github.com/seerr-team/seerr) | Media request/discovery manager for Jellyfin, Plex, and Emby |
+**Frameworks and runtimes**
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+
+**Tools**
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+## Open source
+
+Projects I follow and have forked:
+
+- [**seerr**](https://github.com/Sym-jay/seerr): media request and discovery manager for Jellyfin, Plex and Emby (fork of [seerr-team/seerr](https://github.com/seerr-team/seerr))
+- [**neo**](https://github.com/Sym-jay/neo): self-hostable framework for private RAG systems and LLM inference (fork of [harryfrzz/neo](https://github.com/harryfrzz/neo))
+- [**openclaw**](https://github.com/Sym-jay/openclaw): personal AI assistant (fork of [openclaw/openclaw](https://github.com/openclaw/openclaw))
+- [**superfile**](https://github.com/Sym-jay/superfile): terminal file manager (fork of [yorukot/superfile](https://github.com/yorukot/superfile))
+
+<!--
+Add contributions you've actually made, with real links, for example:
+- Fixed <what> in [owner/repo#123](https://github.com/owner/repo/pull/123)
+-->
+
+## Currently
+
+- Building [Clishe](https://github.com/Sym-jay/clishe), an offline-first shell assistant with optional AI
+- Studying Engineering in Artificial Intelligence & Machine Learning
+- Exploring NLP and model fine-tuning
 
 ---
 
-### 🔍 What I'm Exploring
+<div align="center">
 
-- 🤖 **AI-powered CLI tools** — natural language interfaces for the terminal
-- 🧠 **NLP & lightweight ML** — practical, low-dependency prediction (not just bigger models)
-- 📦 **Developer tooling** — small utilities that solve one problem well
-- 🌐 **Backend & cloud architecture**
+If something here is useful to you, a ⭐ on the repo is always appreciated.
 
----
-
-### 📩 Connect with Me
-
-<p align="center">
-  <a href="https://github.com/Sym-jay">
-    <img src="https://img.shields.io/badge/GitHub-Sym--jay-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://twitter.com/sym_jay">
-    <img src="https://img.shields.io/badge/Twitter-sym__jay-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
-  </a>
-  <a href="mailto:contact@symjay.com">
-    <img src="https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Sym-jay&label=Profile+views&color=0e75b6&style=flat" alt="Profile views" />
-</p>
-
-<p align="center"><b>⭐ If you find my work interesting, feel free to star my repos!</b></p>
+</div>
