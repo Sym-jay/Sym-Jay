@@ -35,6 +35,6 @@ const compacted = svg.replace(/(?:<rect [^>]*\/>)+/g, (run) => {
 
 const inner = compacted.replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
 const viewBox = svg.match(/viewBox="([^"]+)"/)![1];
-const out = path.resolve(import.meta.dirname, "../src/vendor/sora-walk.json");
+const out = path.resolve(import.meta.dirname, "../sora-walk.json");
 writeFileSync(out, JSON.stringify({ viewBox, inner }) + "\n");
 console.log(`sora: ${svg.length} -> ${inner.length} bytes`);

@@ -1,0 +1,25 @@
+{
+  "createdAt": "2024-08-07T05:41:41Z",
+  "repos": 15,
+  "contributedTo": 4,
+  "stars": 12,
+  "releases": 9,
+  "followers": 11,
+  "contributions": 366,
+  "prsMerged": 85,
+  "prsUpstream": 10,
+  "languages": [
+    {
+      "name": "Python",
+      "share": 59
+    },
+    {
+      "name": "Dart",
+      "share": 27
+    },
+    {
+      "name": "Shell",
+      "share": 8
+    }
+  ]
+}
