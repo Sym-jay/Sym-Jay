@@ -16,6 +16,15 @@ const ASCII_COLS = 44;
 const TEXT_X = PAD + ASCII_COLS * CHAR + 26;
 const TEXT_COLS = 58;
 const VALUE_COL = 22; // values start at this column within a line
+// The portrait uses a finer 9px grid in the same block, so the face has room for detail.
+const ASCII_CHAR = 5.4;
+const ASCII_LINE = 10.8;
+const ASCII_FINE_COLS = Math.floor((ASCII_COLS * CHAR) / ASCII_CHAR);
+// Sora walks a strip along the bottom of the card.
+const STRIP = 50;
+const SORA_SCALE = 2; // sprite units -> px
+const SORA_BODY = 28; // sprite units
+const SORA_SPEED = 32; // sprite units per second (the original sprite walks at 23)
 
 // ---- right-hand text ------------------------------------------------------------------
 
@@ -72,9 +81,9 @@ function uptime(since: string) {
 
 const lines: Line[] = [
   header("shyam@sym-jay", true),
-  kv("OS", "Windows 11, Linux"),
+  kv("OS", "Arch Linux"),
   kv("Uptime", uptime(data.createdAt)),
-  kv("Host", "Chinmaya Vishwa Vidyapeeth"),
+  kv("Host", "localhost"),
   kv("Role", "AI & ML engineering student"),
   kv("Location", "India"),
   blank,
@@ -99,9 +108,9 @@ const lines: Line[] = [
   pair("PRs merged", `${data.prsMerged} {Upstream: ${data.prsUpstream}}`, "Releases", String(data.releases)),
 ];
 
-// Bottom row: a prompt with a blinking cursor, Sora walking beside it.
+// Bottom text row: a prompt with a blinking cursor. Sora gets the strip below it.
 const ROWS = lines.length + 2;
-const HEIGHT = PAD + ROWS * LINE + 8;
+const HEIGHT = PAD + ROWS * LINE + STRIP + 8;
 const WIDTH = Math.ceil(TEXT_X + TEXT_COLS * CHAR + PAD);
 
 // ---- ASCII avatar ---------------------------------------------------------------------
@@ -111,30 +120,33 @@ async function asciiAvatar(rows: number) {
   const img = Buffer.from(await res.arrayBuffer());
   // Crop the square avatar to the text block's aspect so characters keep proportions.
   const meta = await sharp(img).metadata();
-  const aspect = (ASCII_COLS * CHAR) / (rows * LINE);
+  const aspect = (ASCII_FINE_COLS * ASCII_CHAR) / (rows * ASCII_LINE);
   const cropW = Math.min(meta.width!, Math.round(meta.height! * aspect));
   const left = Math.round((meta.width! - cropW) / 2);
-  // Local contrast (CLAHE) first, so the face doesn't drown in the dark hair and coat.
-  const contrasted = await sharp(img)
-    .extract({ left, top: 0, width: cropW, height: meta.height! })
+  const cropped = await sharp(img).extract({ left, top: 0, width: cropW, height: meta.height! }).grayscale().png().toBuffer();
+  const { data: px } = await sharp(cropped)
     .grayscale()
-    .clahe({ width: 40, height: 40, maxSlope: 3 })
-    .png()
-    .toBuffer();
-  const { data: px } = await sharp(contrasted)
-    .grayscale()
-    .resize(ASCII_COLS, rows, { fit: "fill" })
+    .resize(ASCII_FINE_COLS, rows, { fit: "fill" })
     .raw()
     .toBuffer({ resolveWithObject: true });
-  // Dark pixels become dense characters; the pale sky stays empty.
-  const ramp = " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
+  // The pale sky stays empty. The figure is dark throughout (hair ~5-15%, face ~20-35%), so its
+  // own tonal range is stretched over the ramp; otherwise face and hair both max out the ink.
+  const SKY = 0.62;
+  const figure = [...px].map((v) => v / 255).filter((v) => v < SKY).sort((a, b) => a - b);
+  const lo = figure[Math.floor(figure.length * 0.05)];
+  const hi = figure[Math.floor(figure.length * 0.97)];
+  const ramp = " .:-=+*#%@"; // few, clearly different densities read better than many similar glyphs
   const out: string[] = [];
   for (let y = 0; y < rows; y++) {
     let row = "";
-    for (let x = 0; x < ASCII_COLS; x++) {
-      const v = px[y * ASCII_COLS + x] / 255;
-      const ink = Math.max(0, Math.min(1, (0.8 - v) / 0.8)) ** 2;
-      row += ramp[Math.round(ink * (ramp.length - 1))];
+    for (let x = 0; x < ASCII_FINE_COLS; x++) {
+      const v = px[y * ASCII_FINE_COLS + x] / 255;
+      if (v >= SKY) {
+        row += " ";
+        continue;
+      }
+      const ink = 1 - Math.min(1, Math.max(0, (v - lo) / (hi - lo)));
+      row += ramp[Math.max(1, Math.round(ink * (ramp.length - 1)))];
     }
     out.push(row.trimEnd());
   }
@@ -153,7 +165,9 @@ const themes = {
 function svg(theme: keyof typeof themes, ascii: string[]) {
   const t = themes[theme];
   const y = (i: number) => PAD + 10 + i * LINE;
-  const asciiRows = ascii.map((row, i) => `<tspan x="${PAD}" y="${y(i)}">${esc(row)}</tspan>`).join("\n");
+  const asciiRows = ascii
+    .map((row, i) => `<tspan x="${PAD}" y="${(PAD + 9 + i * ASCII_LINE).toFixed(1)}">${esc(row)}</tspan>`)
+    .join("\n");
   const textRows = lines
     .map((line, i) => {
       const parts = line.map((p) => (p.cls ? `<tspan class="${p.cls}">${esc(p.text)}</tspan>` : esc(p.text))).join("");
@@ -163,8 +177,15 @@ function svg(theme: keyof typeof themes, ascii: string[]) {
   const promptY = y(lines.length + 1);
   const prompt = "shyam@sym-jay:~$";
   const cursorX = TEXT_X + (prompt.length + 1) * CHAR;
-  const soraW = 240;
-  const soraX = WIDTH - PAD - soraW;
+  // Stretch Sora's walk from its 120-unit stage to the full strip, keeping its pace.
+  const walkW = WIDTH - 2 * PAD;
+  const stage = walkW / SORA_SCALE;
+  const travel = stage - SORA_BODY;
+  const dur = ((2 * travel) / SORA_SPEED).toFixed(1);
+  const soraInner = sora.inner
+    .replace('values="0 0;92 0;0 0"', `values="0 0;${travel.toFixed(1)} 0;0 0"`)
+    .replaceAll('dur="8.0s"', `dur="${dur}s"`);
+  const groundY = promptY + STRIP - 6;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}" xml:space="preserve" font-family="ConsolasFallback, Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace" font-size="16" role="img">
 <title>Shyam Jayasankar, AI and ML engineering student. Projects: Clishe, Blot, Polyphage, WildID.</title>
@@ -188,18 +209,19 @@ text, tspan { white-space: pre; fill: ${t.text}; }
 @keyframes blink { 50% { opacity: 0 } }
 </style>
 <rect x="0.5" y="0.5" width="${WIDTH - 1}" height="${HEIGHT - 1}" rx="14" fill="${t.bg}" stroke="${t.border}"/>
-<text class="ascii">
+<text class="ascii" font-size="9">
 ${asciiRows}
 </text>
 ${textRows}
 <text x="${TEXT_X}" y="${promptY}"><tspan class="key">${prompt}</tspan></text>
 <rect class="cursor" x="${cursorX}" y="${promptY - 14}" width="9" height="18"/>
-<svg class="sora" x="${soraX}" y="${promptY - 30}" width="${soraW}" height="40" viewBox="${sora.viewBox}" shape-rendering="crispEdges">${sora.inner}</svg>
+<line x1="${PAD}" y1="${groundY}" x2="${WIDTH - PAD}" y2="${groundY}" stroke="${t.cc}" stroke-dasharray="2 6" opacity=".6"/>
+<svg class="sora" x="${PAD}" y="${groundY - 20 * SORA_SCALE + 6}" width="${walkW}" height="${20 * SORA_SCALE}" viewBox="0 0 ${stage} 20" shape-rendering="crispEdges">${soraInner}</svg>
 </svg>
 `;
 }
 
-const ascii = await asciiAvatar(ROWS);
+const ascii = await asciiAvatar(Math.floor((ROWS * LINE) / ASCII_LINE));
 mkdirSync(path.join(root, "../assets"), { recursive: true });
 for (const theme of ["dark", "light"] as const) {
   const file = path.join(root, `../assets/terminal-${theme}.svg`);

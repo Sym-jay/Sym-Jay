@@ -3,7 +3,9 @@
 import { writeFileSync } from "node:fs";
 import path from "node:path";
 
-const url = "https://raw.githubusercontent.com/Sym-jay/Blot/main/assets/sora/orange/walk.svg";
+// Palette folder in the Blot repo: blue, orange, sage or mustard.
+const palette = process.argv[2] ?? "blue";
+const url = `https://raw.githubusercontent.com/Sym-jay/Blot/main/assets/sora/${palette}/walk.svg`;
 const svg = await (await fetch(url)).text();
 
 // Replace every run of consecutive <rect>s with merged <path>s grouped by fill.
