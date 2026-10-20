@@ -33,6 +33,23 @@ Safety checks on every command, a fuzz-tested danger classifier, `undo that` for
 deletions, bundled tldr-pages for offline explanations, screen-reader mode, shell completions,
 a man page, and packaging for PyPI and the AUR.
 
+### [Blot](https://github.com/Sym-jay/Blot) &nbsp;·&nbsp; Python
+
+<img src="https://raw.githubusercontent.com/Sym-jay/Blot/main/assets/sora/orange/walk.svg" width="160" align="right" alt="Sora, the Blot slime">
+
+A pre-commit check that has read your project's history. Before you commit, Blot warns when a
+change removes code that was added to fix a bug, brings back a line a fix deliberately removed,
+or touches one file but forgets the one it almost always changes with. Local, no account, no AI.
+
+<p>
+  <img src="https://img.shields.io/pypi/v/blot-git?style=flat-square&label=pypi&labelColor=333333&color=555555" alt="PyPI">
+  <img src="https://img.shields.io/badge/status-pre--alpha-555555?style=flat-square" alt="Pre-alpha">
+  <img src="https://img.shields.io/badge/license-MIT-555555?style=flat-square" alt="MIT">
+</p>
+
+Indexes Flask's 3,800 commits in about two seconds and installs alongside existing git hooks.
+Its mascot, Sora the slime, changes expression depending on what it finds.
+
 ### [Polyphage](https://github.com/Sym-jay/polyphage) &nbsp;·&nbsp; Python
 
 Multi-objective computational design of IsPETase variants for PET-plastic degradation.
@@ -80,8 +97,8 @@ and life lists.
 |---|---|
 | Pull requests merged | **76** |
 | Merged into other people's repositories | **10** |
-| Repositories released publicly | **3** |
-| Tagged releases shipped | **7** |
+| Repositories released publicly | **4** |
+| Tagged releases shipped | **8** |
 
 Upstream contributions include a FAISS vector database and RAG integration for
 [harryfrzz/neo](https://github.com/harryfrzz/neo/pulls?q=author%3ASym-jay),
