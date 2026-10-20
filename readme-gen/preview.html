@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>README preview</title>
+<style>
+  body { margin: 0; font: 14px -apple-system, "Segoe UI", sans-serif; }
+  .theme { padding: 24px; display: flex; flex-direction: column; gap: 16px; width: 840px; }
+  .light { background: #ffffff; } .dark { background: #0d1117; color: #e6edf3; }
+  .row { display: flex; gap: 16px; } img { display: block; max-width: 100%; }
+  .half { width: 412px; }
+</style>
+</head>
+<body>
+<script>
+  const v = Date.now();
+  const img = (n, t, cls = "") => `<img class="${cls}" src="/@fs/C:/dev/sym-jay-profile/assets/${n}-${t}.svg?v=${v}">`;
+  for (const t of ["light", "dark"]) {
+    document.body.insertAdjacentHTML("beforeend", `<div class="theme ${t}">
+      ${img("hero", t)}
+      <div class="row">${img("project-clishe", t, "half")}${img("project-blot", t, "half")}</div>
+      <div class="row">${img("project-polyphage", t, "half")}${img("project-wildid", t, "half")}</div>
+      ${img("heatmap", t)}
+      ${img("activity", t)}
+      <div class="row">${img("stats", t, "half")}${img("languages", t, "half")}</div>
+      ${img("prs-sankey", t)}
+    </div>`);
+  }
+</script>
+</body>
+</html>
