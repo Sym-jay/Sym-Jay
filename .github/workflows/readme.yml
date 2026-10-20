@@ -1,0 +1,50 @@
+name: Refresh README images
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["readme-gen/**", ".github/workflows/readme.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: readme-gen
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: readme-gen/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      # Text is measured at render time; Noto Sans (in the font stack) is close to what viewers get.
+      - run: sudo apt-get install -y fonts-noto-core
+      - run: npm run build:readme
+        env:
+          # A PAT with read:user (secret README_TOKEN) also counts private contributions; GITHUB_TOKEN sees public ones.
+          GITHUB_TOKEN: ${{ secrets.README_TOKEN || secrets.GITHUB_TOKEN }}
+      - name: Commit changed assets
+        working-directory: .
+        run: |
+          git add assets readme-gen/src/data.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh README images"
+          git push
