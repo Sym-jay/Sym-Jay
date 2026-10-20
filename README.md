@@ -13,6 +13,7 @@
 
 ## Projects
 
+<div>
 <a href="https://github.com/Sym-jay/clishe"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/project-clishe-dark.svg">
   <img src="assets/project-clishe-light.svg" width="49%" alt="Clishe: plain English in, the real shell command out. v0.9.0, 7 releases, on PyPI and the AUR. Python, Bash, Ollama.">
@@ -29,6 +30,7 @@
   <source media="(prefers-color-scheme: dark)" srcset="assets/project-wildid-dark.svg">
   <img src="assets/project-wildid-light.svg" width="49%" alt="WildID: identifies endangered marine species from a single photo. 98.47% accuracy across 66 CITES-protected species. Dart, Flutter, PyTorch.">
 </picture></a>
+</div>
 
 <details>
 <summary><b>More about each project</b></summary>
