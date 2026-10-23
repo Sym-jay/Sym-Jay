@@ -3,19 +3,19 @@
   "repos": 15,
   "contributedTo": 4,
   "stars": 12,
-  "releases": 10,
+  "releases": 12,
   "followers": 11,
-  "contributions": 381,
-  "prsMerged": 90,
+  "contributions": 389,
+  "prsMerged": 94,
   "prsUpstream": 10,
   "languages": [
     {
       "name": "Python",
-      "share": 59
+      "share": 61
     },
     {
       "name": "Dart",
-      "share": 26
+      "share": 25
     },
     {
       "name": "Shell",
