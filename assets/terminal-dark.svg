@@ -75,7 +75,7 @@ text, tspan { white-space: pre; fill: #c9d1d9; }
 </text>
 <text x="468.4" y="30" class="l" style="animation-delay:200ms"><tspan class="title">shyam@sym-jay</tspan><tspan class="cc"> ————————————————————————————————————————————</tspan></text>
 <text x="468.4" y="50" class="l" style="animation-delay:245ms"><tspan class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">Arch Linux</tspan></text>
-<text x="468.4" y="70" class="l" style="animation-delay:290ms"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">2 years, 2 months, 17 days</tspan></text>
+<text x="468.4" y="70" class="l" style="animation-delay:290ms"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">2 years, 2 months, 18 days</tspan></text>
 <text x="468.4" y="90" class="l" style="animation-delay:335ms"><tspan class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">localhost</tspan></text>
 <text x="468.4" y="110" class="l" style="animation-delay:380ms"><tspan class="cc">. </tspan><tspan class="key">Role</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">AI &amp; ML engineering student</tspan></text>
 <text x="468.4" y="130" class="l" style="animation-delay:425ms"><tspan class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">India</tspan></text>
@@ -97,8 +97,8 @@ text, tspan { white-space: pre; fill: #c9d1d9; }
 <text x="468.4" y="450" class="l" style="animation-delay:1145ms"><tspan class="cc">.</tspan></text>
 <text x="468.4" y="470" class="l" style="animation-delay:1190ms">- GitHub Stats <tspan class="cc"> ——————————————————————————————————————————</tspan></text>
 <text x="468.4" y="490" class="l" style="animation-delay:1235ms"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">16 {Contributed: 5}</tspan> <tspan class="cc">| </tspan><tspan class="key">Stars</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">12</tspan></text>
-<text x="468.4" y="510" class="l" style="animation-delay:1280ms"><tspan class="cc">. </tspan><tspan class="key">Contributions</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">404 this year</tspan> <tspan class="cc">| </tspan><tspan class="key">Followers</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">11</tspan></text>
-<text x="468.4" y="530" class="l" style="animation-delay:1325ms"><tspan class="cc">. </tspan><tspan class="key">PRs merged</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">99 {Upstream: 10}</tspan> <tspan class="cc">| </tspan><tspan class="key">Releases</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">14</tspan></text>
+<text x="468.4" y="510" class="l" style="animation-delay:1280ms"><tspan class="cc">. </tspan><tspan class="key">Contributions</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">412 this year</tspan> <tspan class="cc">| </tspan><tspan class="key">Followers</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">11</tspan></text>
+<text x="468.4" y="530" class="l" style="animation-delay:1325ms"><tspan class="cc">. </tspan><tspan class="key">PRs merged</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">102 {Upstream: 10}</tspan> <tspan class="cc">| </tspan><tspan class="key">Releases</tspan>:<tspan class="cc"> . </tspan><tspan class="value">15</tspan></text>
 <text x="468.4" y="570"><tspan class="key">shyam@sym-jay:~$</tspan></text>
 <rect class="cursor" x="631.5999999999999" y="556" width="9" height="18"/>
 <line x1="20" y1="614" x2="1026" y2="614" stroke="#616e7f" stroke-dasharray="2 6" opacity=".6"/>
