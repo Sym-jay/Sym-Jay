@@ -4,9 +4,9 @@
   "contributedTo": 4,
   "stars": 13,
   "releases": 16,
-  "followers": 11,
-  "contributions": 419,
-  "prsMerged": 104,
+  "followers": 12,
+  "contributions": 430,
+  "prsMerged": 108,
   "prsUpstream": 10,
   "languages": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "name": "Dart",
-      "share": 25
+      "share": 24
     },
     {
       "name": "Shell",
