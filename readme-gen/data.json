@@ -5,13 +5,13 @@
   "stars": 13,
   "releases": 18,
   "followers": 12,
-  "contributions": 448,
-  "prsMerged": 115,
+  "contributions": 458,
+  "prsMerged": 119,
   "prsUpstream": 10,
   "languages": [
     {
       "name": "Python",
-      "share": 62
+      "share": 63
     },
     {
       "name": "Dart",
