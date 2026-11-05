@@ -3,10 +3,10 @@
   "repos": 16,
   "contributedTo": 4,
   "stars": 13,
-  "releases": 19,
+  "releases": 20,
   "followers": 12,
-  "contributions": 480,
-  "prsMerged": 125,
+  "contributions": 498,
+  "prsMerged": 130,
   "prsUpstream": 10,
   "languages": [
     {
@@ -15,11 +15,11 @@
     },
     {
       "name": "Dart",
-      "share": 24
+      "share": 23
     },
     {
       "name": "Shell",
-      "share": 7
+      "share": 8
     }
   ]
 }
