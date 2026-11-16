@@ -5,17 +5,17 @@
   "stars": 14,
   "releases": 24,
   "followers": 10,
-  "contributions": 534,
-  "prsMerged": 144,
+  "contributions": 543,
+  "prsMerged": 146,
   "prsUpstream": 10,
   "languages": [
     {
       "name": "Python",
-      "share": 64
+      "share": 68
     },
     {
       "name": "Dart",
-      "share": 22
+      "share": 17
     },
     {
       "name": "Shell",
