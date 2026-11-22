@@ -3,15 +3,15 @@
   "repos": 15,
   "contributedTo": 4,
   "stars": 14,
-  "releases": 25,
+  "releases": 26,
   "followers": 10,
-  "contributions": 560,
-  "prsMerged": 152,
+  "contributions": 569,
+  "prsMerged": 153,
   "prsUpstream": 10,
   "languages": [
     {
       "name": "Python",
-      "share": 68
+      "share": 69
     },
     {
       "name": "Dart",
